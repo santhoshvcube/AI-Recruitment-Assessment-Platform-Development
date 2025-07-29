@@ -1,0 +1,141 @@
+ 1. Frontend Prompts (for User & Admin Panels)
+🎓 Student/Jobseeker Portal
+Home Prompt:
+
+Welcome to your AI Interview Companion. Upload your resume and job description to begin your personalized evaluation journey.
+
+Resume Upload Prompt:
+
+Upload your latest resume (PDF format only). Our AI will analyze formatting, experience relevance, skills, and career potential.
+
+Job Description Upload Prompt:
+
+Paste or upload the job description you're applying for. We'll match your profile against it and customize your interview experience.
+
+Interview Mode Prompt:
+
+Choose your interview mode:
+
+Technical Interview
+
+Communication & HR Interview
+
+Scenario-Based Assessment
+
+Full Evaluation Suite
+
+During Interview:
+
+I'm ready to begin your interview. I’ll ask a series of questions tailored to your resume and job description. Please answer clearly. You may say “repeat” or “skip” at any time.
+
+Post-Interview Feedback:
+
+Your AI report is ready. Here's a summary of your performance and personalized growth plan. You can download the full PDF or view it online.
+
+🧑‍💼 Admin Dashboard Prompts
+Student Overview Page:
+
+View candidate profiles, interview reports, resume-JD matching scores, and AI evaluation metrics in real-time.
+
+Filters:
+
+Filter by Batch, Date, Interview Mode, Score Range, Recommendation Status (Shortlisted/Not Shortlisted).
+
+Report Viewer Prompt:
+
+Click to view full AI evaluation report: JD match %, Communication rating, Technical score, Cultural fit, Career potential, Suggested action plan.
+
+Export Options:
+
+Export Reports: [CSV] [PDF Bundle] [JSON]
+
+Admin Actions:
+
+▢ Mark for HR Round
+▢ Assign Reviewer
+▢ Share Feedback to Candidate
+▢ Archive Record
+
+⚙️ 2. AI Backend Pipeline Architecture
+pgsql
+Copy
+Edit
+📂 Candidate Uploads
+ └── PDF Resume
+ └── JD Text
+
+⬇️
+
+🧠 NLP & Parsing Layer
+ ├── Resume Parser (skills, roles, education, experience, format quality)
+ └── JD Parser (requirements, keywords, responsibilities, soft skills)
+
+⬇️
+
+🔍 Semantic Matching Engine
+ ├── Skill match %
+ ├── Experience alignment
+ └── Gaps & overlaps
+
+⬇️
+
+🎤 Adaptive Interview Module
+ ├── Question Generator (based on JD + Resume)
+ ├── Response Analyzer (NLP + tone + keyword match)
+ └── Dynamic Score Updater
+
+⬇️
+
+📊 Evaluation Engine
+ ├── Communication (fluency, clarity, confidence)
+ ├── Technical (accuracy, depth, logic)
+ ├── JD Fit (quantitative alignment)
+ ├── Cultural Fit (attitude, growth mindset)
+ └── Career Potential (trajectory, leadership)
+
+⬇️
+
+📝 Report Generator
+ ├── JSON (machine-readable)
+ ├── PDF (admin and student)
+ └── CSV Export (for dashboard analytics)
+
+⬇️
+
+🔐 Secure Storage / Sync Layer
+ ├── Encrypted user DB
+ ├── Admin access control
+ └── Session & audit logs
+📄 3. AI-Generated Sample Report (Summary)
+Candidate: Jane Doe
+Role Applied: DevOps Engineer
+JD Match Score: 83%
+Resume Quality: 92% (ATS-optimized, relevant experience)
+
+Dimension	Score (/10)	Feedback
+Communication	8	Clear, confident responses with good command of language.
+Technical Skills	7	Solid foundation in Docker, Jenkins, Linux. Improve on K8s
+JD Fit	8	Strong match with 4/5 core skills. Need more CI/CD depth.
+Cultural Alignment	9	Shows initiative and adaptability. Team-first mindset.
+Career Potential	9	High upward mobility; leadership potential evident.
+
+Final Recommendation: ✅ Proceed to Technical Panel
+
+Suggested Improvements:
+
+Deepen Kubernetes hands-on experience
+
+Complete Azure DevOps certification
+
+Refine project documentation for better storytelling
+
+🔒 4. Security & Ethics Framework
+All data encrypted in transit (TLS) and at rest (AES-256).
+
+Auto-deletion of session data after 30 days.
+
+No access to candidate PII without admin-level permission.
+
+Bias-mitigation model: Age, gender, race, and non-job-related traits ignored during scoring.
+
+Transparent audit logs for all admin actions.
